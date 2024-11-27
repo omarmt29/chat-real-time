@@ -32,16 +32,18 @@ function App() {
     const { data, error } = await supabase
       .from('messages')
       .select('*')
-      .order('created_at', { ascending: true });
-
+      .order('created_at', { ascending: false }) // Ordenar por los más recientes primero
+      .limit(15); // Limitar a los últimos 15 mensajes
+  
     if (!error) {
-      setMessages(data);
+      // Revertir los mensajes para que los más antiguos estén arriba
+      setMessages(data.reverse());
       setTimeout(() => scrollToBottom(), 100); // Desplazar al final tras cargar mensajes
     } else {
       console.error('Error fetching messages:', error.message);
     }
   };
-
+  
   const handleSendMessage = async () => {
     if (newMessage.trim() === '' || username.trim() === '') return;
 
