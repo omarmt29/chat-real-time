@@ -108,17 +108,21 @@ function App() {
               {messages.map((message, index) => (
                 <div
                   key={index}
-                  className={`chat ${
+                  className={`chat pb-4 ${
                     message.user === username ? 'chat-end' : 'chat-start'
                   }`}
                 >
-                  <div className="chat-header">
+                  <div className="chat-header mb-1 text-lg font-bold">
                     {message.user}{' '}
-                    <span className="text-xs opacity-50">
+                   
+                  </div>
+                  <div className="chat-bubble flex flex-col text-lg gap-2">
+                    {message.content} 
+
+                    <span className="text-xs ">
                       {formatDate(message.created_at)}
                     </span>
                   </div>
-                  <div className="chat-bubble">{message.content}</div>
                 </div>
               ))}
             </div>
