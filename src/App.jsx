@@ -162,8 +162,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="w-full max-w-md h-screen bg-white shadow-xl rounded-lg flex flex-col">
+    <div className="h-screen-dvh bg-gray-100 flex items-center justify-center">
+      <div className="w-full max-w-md h-screen-dvh bg-white shadow-xl rounded-lg flex flex-col">
         {!username && (
           <div className="p-4 flex flex-col items-center">
             <h2 className="text-xl font-bold mb-2">Enter your username</h2>
