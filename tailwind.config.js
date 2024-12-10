@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       height: {
-        'screen-dvh': ['100dvh', '100lvh'], // Usa `dvh` para incluir el viewport dinámico
+        'screen-dvh': ['100dvh'], // Usa `dvh` para incluir el viewport dinámico
       },
     },
   },
